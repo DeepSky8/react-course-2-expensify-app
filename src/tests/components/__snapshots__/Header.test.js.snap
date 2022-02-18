@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<header>
+  <h1>
+    Expensify
+  </h1>
+  <p>
+    <NavLink
+      className={[Function]}
+      to="/"
+    >
+      Dashboard
+    </NavLink>
+    <NavLink
+      className={[Function]}
+      to="/create"
+    >
+      Create Expense
+    </NavLink>
+  </p>
+</header>
+`;
