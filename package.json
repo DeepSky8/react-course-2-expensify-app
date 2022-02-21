@@ -36,13 +36,15 @@
   "description": "track expenses",
   "main": "app.js",
   "scripts": {
-    "build": "webpack",
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production",
     "dev-server": "webpack serve --mode development",
     "test": "jest"
   },
   "author": "Joel Jackson",
   "license": "ISC",
   "devDependencies": {
+    "mini-css-extract-plugin": "^2.5.3",
     "webpack": "^5.66.0"
   }
 }
