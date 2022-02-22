@@ -12,6 +12,7 @@
     "babel-loader": "^8.2.3",
     "core-js": "^3.20.3",
     "css-loader": "^6.5.1",
+    "express": "^4.17.3",
     "jest": "^27.5.1",
     "moment": "^2.29.1",
     "node-sass": "^7.0.1",
@@ -39,12 +40,18 @@
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "dev-server": "webpack serve --mode development",
-    "test": "jest"
+    "test": "jest",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "author": "Joel Jackson",
   "license": "ISC",
   "devDependencies": {
     "mini-css-extract-plugin": "^2.5.3",
     "webpack": "^5.66.0"
+  },
+  "engines": {
+    "node": "^16.13.1",
+    "npm": "^8.3.0"
   }
 }
