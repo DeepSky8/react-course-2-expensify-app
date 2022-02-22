@@ -16,13 +16,15 @@ const Header = () => (
             }>
                 Create Expense
             </NavLink>
-            <NavLink to="/help" className={({ isActive }) =>
-                isActive ? 'is-active' : undefined
-            }>
-                Help
-            </NavLink>
+            
         </p>
     </header>
 )
 
 export default Header;
+
+// <NavLink to="/help" className={({ isActive }) =>
+//                 isActive ? 'is-active' : undefined
+//             }>
+//                 Help
+//             </NavLink>
