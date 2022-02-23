@@ -13,7 +13,6 @@
     "core-js": "^3.20.3",
     "css-loader": "^6.5.1",
     "express": "^4.17.3",
-    "jest": "^27.5.1",
     "moment": "^2.29.1",
     "node-sass": "^7.0.1",
     "normalize.css": "^8.0.1",
@@ -24,31 +23,33 @@
     "react-modal": "^3.14.4",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "react-test-renderer": "^17.0.2",
     "redux": "^4.1.2",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "uuid": "^8.3.2",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.3"
+    "webpack-cli": "^4.9.1"
   },
   "name": "expensify",
   "version": "1.0.0",
   "description": "track expenses",
   "main": "app.js",
   "scripts": {
-    "build:dev": "webpack --mode development",
-    "build:prod": "webpack --mode production",
-    "dev-server": "webpack serve --mode development",
-    "test": "jest",
+    "build:dev": "webpack --config webpack.dev.js",
+    "build:prod": "webpack --config webpack.prod.js",
+    "dev-server": "webpack serve --config webpack.dev.js",
+    "test": "jest --config=jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "npm run build:prod"
   },
   "author": "Joel Jackson",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^27.5.1",
     "mini-css-extract-plugin": "^2.5.3",
-    "webpack": "^5.66.0"
+    "react-test-renderer": "^17.0.2",
+    "webpack": "^5.66.0",
+    "webpack-dev-server": "^4.7.3",
+    "webpack-merge": "^5.8.0"
   },
   "engines": {
     "node": "^16.13.1",
