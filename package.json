@@ -16,6 +16,7 @@
     "moment": "^2.29.1",
     "node-sass": "^7.0.1",
     "normalize.css": "^8.0.1",
+    "numeral": "^2.0.6",
     "react": "^17.0.2",
     "react-app-polyfill": "^3.0.0",
     "react-dates": "^21.8.0",
@@ -27,7 +28,7 @@
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "uuid": "^8.3.2",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.2"
   },
   "name": "expensify",
   "version": "1.0.0",
@@ -37,7 +38,7 @@
     "build:dev": "webpack --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
     "dev-server": "webpack serve --config webpack.dev.js",
-    "test": "jest --config=jest.config.json",
+    "test": "jest --watchAll --runInBand",
     "start": "node server/server.js",
     "heroku-postbuild": "npm run build:prod"
   },
@@ -47,8 +48,8 @@
     "jest": "^27.5.1",
     "mini-css-extract-plugin": "^2.5.3",
     "react-test-renderer": "^17.0.2",
-    "webpack": "^5.66.0",
-    "webpack-dev-server": "^4.7.3",
+    "webpack": "^5.69.1",
+    "webpack-dev-server": "^4.7.4",
     "webpack-merge": "^5.8.0"
   },
   "engines": {
