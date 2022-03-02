@@ -22,7 +22,43 @@ exports[`should render ExpenseForm correctly 1`] = `
     <input
       onChange={[Function]}
       type="date"
-      value="2022-03-02"
+      value="1969-12-31"
+    />
+    <textarea
+      onChange={[Function]}
+      placeholder="Add a note for your expense (optional)"
+      value=""
+    />
+    <button>
+      Save Expense
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should render ExpenseForm with expense data 1`] = `
+<div>
+  
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      autoFocus={true}
+      onChange={[Function]}
+      placeholder="Description"
+      type="text"
+      value="Gum"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Amount"
+      type="text"
+      value="1.95"
+    />
+    <input
+      onChange={[Function]}
+      type="date"
+      value="1969-12-31"
     />
     <textarea
       onChange={[Function]}
