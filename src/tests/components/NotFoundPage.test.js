@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactShallowRenderer from 'react-test-renderer/shallow';
-import Header from '../../components/Header';
+import { NotFoundPage } from '../../components/NotFoundPage';
 
-test('should render Header correctly', () => {
+test('should display the 404 page', () => {
     const renderer = new ReactShallowRenderer();
-    renderer.render(<Header />)
+    renderer.render(<NotFoundPage />)
     expect(renderer.getRenderOutput()).toMatchSnapshot();
 })

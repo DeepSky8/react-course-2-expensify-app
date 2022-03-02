@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpenseForm correctly 1`] = `
+<div>
+  
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      autoFocus={true}
+      onChange={[Function]}
+      placeholder="Description"
+      type="text"
+      value=""
+    />
+    <input
+      onChange={[Function]}
+      placeholder="Amount"
+      type="text"
+      value=""
+    />
+    <input
+      onChange={[Function]}
+      type="date"
+      value="2022-03-02"
+    />
+    <textarea
+      onChange={[Function]}
+      placeholder="Add a note for your expense (optional)"
+      value=""
+    />
+    <button>
+      Save Expense
+    </button>
+  </form>
+</div>
+`;

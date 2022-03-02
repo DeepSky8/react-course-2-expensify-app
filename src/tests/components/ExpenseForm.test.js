@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactShallowRenderer from 'react-test-renderer/shallow';
-import Header from '../../components/Header';
+import ExpenseForm from '../../components/ExpenseForm';
 
-test('should render Header correctly', () => {
+test('should render ExpenseForm correctly', () => {
     const renderer = new ReactShallowRenderer();
-    renderer.render(<Header />)
+    renderer.render(<ExpenseForm />)
     expect(renderer.getRenderOutput()).toMatchSnapshot();
 })
