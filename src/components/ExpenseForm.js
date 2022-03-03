@@ -11,7 +11,7 @@ export default class ExpenseForm extends React.Component {
             amount: props.expense ? (props.expense.amount / 100).toString() : '',
             createdAt: props.expense ? moment(props.expense.createdAt).format("yyyy-MM-DD") : moment().format("yyyy-MM-DD"),
             calendarFocused: false,
-            error: ''
+            error: props.error ? props.error : ''
         };
     }
 
@@ -59,30 +59,46 @@ export default class ExpenseForm extends React.Component {
             <div>
                 {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Description"
-                        autoFocus
-                        value={this.state.description}
-                        onChange={(this.onDescriptionChange)}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Amount"
-                        value={this.state.amount}
-                        onChange={this.onAmountChange}
-                    />
-                    <input
-                        type="date"
-                        value={this.state.createdAt}
-                        onChange={this.onDateChange}
-                    />
-                    <textarea
-                        placeholder="Add a note for your expense (optional)"
-                        value={this.state.note}
-                        onChange={this.onNoteChange}
-                    >
-                    </textarea>
+                    <label htmlFor='description'>Description
+                        <input
+                            id='description'
+                            name='description'
+                            type="text"
+                            placeholder="Required"
+                            autoFocus
+                            value={this.state.description}
+                            onChange={(this.onDescriptionChange)}
+                        />
+                    </label>
+                    <label htmlFor='amount'>Amount
+                        <input
+                            id='amount'
+                            name='amount'
+                            type="text"
+                            placeholder="Required in numbers"
+                            value={this.state.amount}
+                            onChange={this.onAmountChange}
+                        />
+                    </label>
+                    <label htmlFor='date'>Date
+                        <input
+                            id='date'
+                            name='date'
+                            type="date"
+                            value={this.state.createdAt}
+                            onChange={this.onDateChange}
+                        />
+                    </label>
+                    <label htmlFor='note'>Note (optional)
+                        <textarea
+                            id='note'
+                            name='note'
+                            placeholder="Add a note for your expense (optional)"
+                            value={this.state.note}
+                            onChange={this.onNoteChange}
+                        >
+                        </textarea>
+                    </label>
                     <button>Save Expense</button>
                 </form>
             </div>

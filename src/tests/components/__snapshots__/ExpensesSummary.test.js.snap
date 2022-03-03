@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display number and total of expenses to be 0, 0 1`] = `
+<div>
+  <p>
+    Viewing 0 expenses totalling $0.00
+  </p>
+</div>
+`;
+
+exports[`should display number and total of expenses to be 1, 1.95 1`] = `
+<div>
+  <p>
+    Viewing 1 expense totalling $1.95
+  </p>
+</div>
+`;
+
+exports[`should display number and total of expenses to be 3, 1141.95 1`] = `
+<div>
+  <p>
+    Viewing 3 expenses totalling $1,141.95
+  </p>
+</div>
+`;

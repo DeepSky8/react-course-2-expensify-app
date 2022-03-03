@@ -2,22 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import selectExpenses from '../selectors/expenses'
 import numeral from 'numeral';
-import expensesSummaryData from '../selectors/expenses-summaryData';
+import selectExpensesTotal from '../selectors/selectExpensesTotal';
 
-const ExpensesSummary = (props) => {
-    const summaryData = expensesSummaryData(props.expenses);
-    const arrayLength = summaryData.arrayLength.toString();
-    const arrayTotal = numeral(summaryData.arrayTotal / 100).format('$0,0.00');
-    const plural = arrayLength === 1 ? '' : 's';
+export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
+    const expenseWord = expenseCount === 1 ? 'expense' : 'expenses';
+    const arrayLengthWord = expenseCount.toString();
+    const formattedExpensesTotal = numeral(expensesTotal / 100).format('$0,0.00');
 
     return (
         <div>
             <p>
-                {
-                    `Viewing ${arrayLength} 
-                expense${plural} 
-                totalling ${arrayTotal}`
-                }
+                {`Viewing ${arrayLengthWord} ${expenseWord} totalling ${formattedExpensesTotal}`}
             </p>
 
         </div>
@@ -25,9 +20,11 @@ const ExpensesSummary = (props) => {
 }
 
 const mapStateToProps = (state) => {
+    const visibleExpenses = (selectExpenses(state.expenses, state.filters))
     return {
-        expenses: selectExpenses(state.expenses, state.filters)
+        expenseCount: visibleExpenses.length,
+        expensesTotal: selectExpensesTotal(visibleExpenses)
     }
-};
 
+}
 export default connect(mapStateToProps)(ExpensesSummary)

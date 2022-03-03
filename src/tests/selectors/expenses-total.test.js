@@ -1,5 +1,5 @@
 import expenses from "../fixtures/expenses";
-import selectExpensesTotal from "../../selectors/expenses-total";
+import selectExpensesTotal from '../../selectors/selectExpensesTotal'
 
 test('should add together expense amounts from array objects', () => {
     const result = selectExpensesTotal(expenses)
