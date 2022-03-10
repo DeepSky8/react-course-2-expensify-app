@@ -1,5 +1,5 @@
 import { db } from '../firebase/firebase';
-import { push, ref } from 'firebase/database';
+import { get, push, ref } from 'firebase/database';
 
 export const addExpense = (expense) => ({
     type: 'ADD_EXPENSE',
@@ -21,7 +21,7 @@ export const startAddExpense = (expenseData = {}) => {
                     id: ref.key,
                     ...expense
                 }))
-             })
+            })
             .catch((e) => { })
     }
 }
@@ -37,3 +37,29 @@ export const editExpense = (id, updates) => ({
     id,
     updates
 })
+
+export const setExpenses = (expenses) => ({
+    type: 'SET_EXPENSES',
+    expenses
+});
+
+export const startSetExpenses = () => {
+    return (dispatch) => {
+        return get(ref(db, 'expenses'))
+            .then((dataSnapshot) => {
+                const expenses = [];
+                dataSnapshot.forEach((childSnapShot) => {
+                    expenses.push({
+                        id: childSnapShot.key,
+                        ...childSnapShot.val()
+                    })
+                })
+                dispatch(setExpenses(expenses))
+            }).catch((error) => {
+                console.log('Error: ', error)
+            });
+    }
+};
+
+
+
