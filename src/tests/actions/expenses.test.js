@@ -4,10 +4,9 @@ import {
     addExpense,
     startAddExpense,
     editExpense,
-
+    startEditExpense,
     removeExpense,
     startRemoveExpense,
-
     setExpenses,
     startSetExpenses,
 } from '../../actions/expenses';
@@ -53,7 +52,7 @@ test('should use startRemoveExpense to add action to store with ID to remove', (
                 });
             return get(ref(db, `expenses/${id}`))
         })
-        .then((dataSnapshot) => { 
+        .then((dataSnapshot) => {
             expect(dataSnapshot.val()).toBeFalsy();
             done();
         })
@@ -70,6 +69,31 @@ test('should edit elements of an expense', () => {
         id: '123abc',
         updates: { note: 'new note value' }
     })
+})
+
+test('should edit expense from firebase', (done) => {
+    const store = createMockStore({});
+    const id = expenses[1].id
+    const updates = {
+        amount: 21045
+    }
+    store.dispatch(startEditExpense(id, updates))
+        .then(() => {
+            const actions = store.getActions();
+            expect(actions[0]).toEqual({
+                type: 'EDIT_EXPENSE',
+                id,
+                updates
+            })
+            return get(ref(db, `expenses/${id}`))
+        })
+        .then((snapShot) => {
+            expect(snapShot.val().amount).toBe(updates.amount)
+            done();
+        })
+        .catch((error) => {
+            console.log('Error: ', error)
+        })
 })
 
 test('should add new expense with provided values', () => {
@@ -163,7 +187,4 @@ test('should fetch the expenses from firebase', (done) => {
             done();
         })
 })
-
-
-
 
