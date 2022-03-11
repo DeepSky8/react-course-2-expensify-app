@@ -1,19 +1,25 @@
 import { db } from '../firebase/firebase';
-import { get, push, ref } from 'firebase/database';
+import { get, push, ref, remove, update } from 'firebase/database';
 
 export const addExpense = (expense) => ({
     type: 'ADD_EXPENSE',
     expense
 })
+
 export const startAddExpense = (expenseData = {}) => {
     return (dispatch) => {
         const {
-            description = '',
-            note = '',
             amount = 0,
-            createdAt = 0
+            createdAt = 0,
+            description = '',
+            note = ''
         } = expenseData
-        const expense = { description, note, amount, createdAt }
+        const expense = {
+            amount,
+            createdAt,
+            description,
+            note
+        }
 
         return push(ref(db, 'expenses'), expense)
             .then((ref) => {
@@ -30,7 +36,22 @@ export const removeExpense = ({ id } = {}) => (
     {
         type: 'REMOVE_EXPENSE',
         id
-    });
+    }
+);
+
+
+
+export const startRemoveExpense = ({ id } = {}) => {
+    return (dispatch) => {
+        return remove(ref(db, `expenses/${id}`))
+            .then(() => {
+                dispatch(removeExpense({ id }))
+            })
+            .catch((e) => {
+                console.log('Error: ', e)
+            })
+    }
+}
 
 export const editExpense = (id, updates) => ({
     type: 'EDIT_EXPENSE',
