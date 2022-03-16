@@ -67,7 +67,7 @@ export default class ExpenseForm extends React.Component {
                             placeholder="Required"
                             autoFocus
                             value={this.state.description}
-                            onChange={(this.onDescriptionChange)}
+                            onChange={this.onDescriptionChange}
                         />
                     </label>
                     <label htmlFor='amount'>Amount

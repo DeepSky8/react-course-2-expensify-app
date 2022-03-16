@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses'
 import ExpenseForm from './ExpenseForm';
 import { useNavigate } from 'react-router-dom';
+import { history } from '../routers/AppRouter';
 
 
 
@@ -14,18 +15,18 @@ const EditExpensePage = (props) => {
                 expense={props.expense}
                 onSubmit={(expense) => {
                     props.dispatch(startEditExpense(props.expense.id, expense))
-                    navigate('/')
+                    navigate('/dashboard')
                 }} />
             <button onClick={() => {
                 props.dispatch(startRemoveExpense({ id: props.expense.id }))
-                navigate('/')
+                navigate('/dashboard')
             }}>Remove Expense</button>
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
-    const params = { id: window.location.pathname.split("/")[2] };
+    const params = { id: history.location.pathname.split("/")[3] };
     return {
         expense: state.expenses.find((expense) => {
             return expense.id === params.id
@@ -35,3 +36,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(EditExpensePage);
 
+// Alternate method of accessing location, if History goes out of vogue again:
+// window.location.pathname.split("/")[2]

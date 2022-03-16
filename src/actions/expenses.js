@@ -1,4 +1,4 @@
-import { db } from '../firebase/firebase';
+import db from '../firebase/firebase';
 import { get, push, ref, remove, update } from 'firebase/database';
 
 export const addExpense = (expense) => ({

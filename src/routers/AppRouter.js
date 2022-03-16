@@ -1,29 +1,50 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from '../components/Header';
+import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import AddExpensePage from '../components/AddExpensePage';
 import EditExpensePage from '../components/EditExpensePage';
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
-import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/NotFoundPage';
+import LoginPage from '../components/LoginPage';
+import PrivateRoute from './PrivateRoute';
+
+export const history = createBrowserHistory();
 
 
 const AppRouter = () => (
-    <BrowserRouter>
+    <HistoryRouter history={history}>
         <div>
-            <Header />
             <Routes>
-                <Route path="/" element={<ExpenseDashboardPage />} />
-                <Route path="create" element={<AddExpensePage />} />
-                <Route path="edit/:ID" element={<EditExpensePage />}>
-
-                </Route>
-                <Route path="help" element={<HelpPage />} />
+                <Route path="/" element={<LoginPage />} />
+                <Route
+                    path="dashboard"
+                    element={
+                        <PrivateRoute>
+                            <ExpenseDashboardPage />
+                        </PrivateRoute>
+                    } />
+                <Route
+                    path="create"
+                    element={
+                        <PrivateRoute>
+                            <AddExpensePage />
+                        </PrivateRoute>
+                    } />
+                <Route
+                    path="dashboard/edit/:id"
+                    element={
+                        <PrivateRoute>
+                            <EditExpensePage />
+                        </PrivateRoute>
+                    } />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </div>
 
-    </BrowserRouter>
+    </HistoryRouter>
 )
 
 export default AppRouter;
+
+//                 <Route path="login" element={<LoginPage />} />
