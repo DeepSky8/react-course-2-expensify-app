@@ -8,12 +8,6 @@ exports[`should render Header correctly 1`] = `
   <p>
     <NavLink
       className={[Function]}
-      to="/"
-    >
-      Login
-    </NavLink>
-    <NavLink
-      className={[Function]}
       to="/dashboard"
     >
       Dashboard
