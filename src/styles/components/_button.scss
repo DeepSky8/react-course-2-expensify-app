@@ -1,0 +1,24 @@
+.button {
+    background: $blue;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: $font-size-large;
+    font-weight: 300;
+    line-height: 1;
+    padding: $s-size;
+    text-decoration: none;
+}
+
+// .button:hover {
+//     background-color: adjust-color($color: $parchment, $hue: 0, $saturation: 15%, $lightness: -15%, $alpha: 1);
+//     color: black;
+// }
+
+.button--link {
+    background: none;
+}
+
+.button--secondary {
+    background: #888;
+}

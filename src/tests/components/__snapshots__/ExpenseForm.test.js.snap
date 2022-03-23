@@ -1,195 +1,224 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseForm correctly 1`] = `
-<div>
+<form
+  className="form"
+  onSubmit={[Function]}
+>
   
-  <form
-    onSubmit={[Function]}
+  <label
+    className="label-placement"
+    htmlFor="description"
   >
-    <label
-      htmlFor="description"
+    Description:
+    <input
+      autoFocus={true}
+      className="text-input"
+      id="description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Required"
+      type="text"
+      value=""
+    />
+  </label>
+  <label
+    className="label-placement"
+    htmlFor="amount"
+  >
+    Amount:
+    <input
+      className="text-input"
+      id="amount"
+      name="amount"
+      onChange={[Function]}
+      placeholder="Required in numbers"
+      type="text"
+      value=""
+    />
+  </label>
+  <label
+    className="label-placement"
+    htmlFor="date"
+  >
+    Date:
+    <input
+      id="date"
+      name="date"
+      onChange={[Function]}
+      type="date"
+      value="1969-12-31"
+    />
+  </label>
+  <label
+    className="label-placement"
+    htmlFor="note"
+  >
+    Note (optional):
+    <textarea
+      id="note"
+      name="note"
+      onChange={[Function]}
+      placeholder="Add a note for your expense (optional)"
+      value=""
+    />
+  </label>
+  <div>
+    <button
+      className="button"
     >
-      Description
-      <input
-        autoFocus={true}
-        id="description"
-        name="description"
-        onChange={[Function]}
-        placeholder="Required"
-        type="text"
-        value=""
-      />
-    </label>
-    <label
-      htmlFor="amount"
-    >
-      Amount
-      <input
-        id="amount"
-        name="amount"
-        onChange={[Function]}
-        placeholder="Required in numbers"
-        type="text"
-        value=""
-      />
-    </label>
-    <label
-      htmlFor="date"
-    >
-      Date
-      <input
-        id="date"
-        name="date"
-        onChange={[Function]}
-        type="date"
-        value="1969-12-31"
-      />
-    </label>
-    <label
-      htmlFor="note"
-    >
-      Note (optional)
-      <textarea
-        id="note"
-        name="note"
-        onChange={[Function]}
-        placeholder="Add a note for your expense (optional)"
-        value=""
-      />
-    </label>
-    <button>
       Save Expense
     </button>
-  </form>
-</div>
+  </div>
+</form>
 `;
 
 exports[`should render ExpenseForm with expense data 1`] = `
-<div>
+<form
+  className="form"
+  onSubmit={[Function]}
+>
   
-  <form
-    onSubmit={[Function]}
+  <label
+    className="label-placement"
+    htmlFor="description"
   >
-    <label
-      htmlFor="description"
+    Description:
+    <input
+      autoFocus={true}
+      className="text-input"
+      id="description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Required"
+      type="text"
+      value="Gum"
+    />
+  </label>
+  <label
+    className="label-placement"
+    htmlFor="amount"
+  >
+    Amount:
+    <input
+      className="text-input"
+      id="amount"
+      name="amount"
+      onChange={[Function]}
+      placeholder="Required in numbers"
+      type="text"
+      value="1.95"
+    />
+  </label>
+  <label
+    className="label-placement"
+    htmlFor="date"
+  >
+    Date:
+    <input
+      id="date"
+      name="date"
+      onChange={[Function]}
+      type="date"
+      value="1969-12-31"
+    />
+  </label>
+  <label
+    className="label-placement"
+    htmlFor="note"
+  >
+    Note (optional):
+    <textarea
+      id="note"
+      name="note"
+      onChange={[Function]}
+      placeholder="Add a note for your expense (optional)"
+      value=""
+    />
+  </label>
+  <div>
+    <button
+      className="button"
     >
-      Description
-      <input
-        autoFocus={true}
-        id="description"
-        name="description"
-        onChange={[Function]}
-        placeholder="Required"
-        type="text"
-        value="Gum"
-      />
-    </label>
-    <label
-      htmlFor="amount"
-    >
-      Amount
-      <input
-        id="amount"
-        name="amount"
-        onChange={[Function]}
-        placeholder="Required in numbers"
-        type="text"
-        value="1.95"
-      />
-    </label>
-    <label
-      htmlFor="date"
-    >
-      Date
-      <input
-        id="date"
-        name="date"
-        onChange={[Function]}
-        type="date"
-        value="1969-12-31"
-      />
-    </label>
-    <label
-      htmlFor="note"
-    >
-      Note (optional)
-      <textarea
-        id="note"
-        name="note"
-        onChange={[Function]}
-        placeholder="Add a note for your expense (optional)"
-        value=""
-      />
-    </label>
-    <button>
       Save Expense
     </button>
-  </form>
-</div>
+  </div>
+</form>
 `;
 
 exports[`should render error for invalid form submission 1`] = `
-<div>
-  <p>
+<form
+  className="form"
+  onSubmit={[Function]}
+>
+  <p
+    className="form__error"
+  >
     Please provide description and amount
   </p>
-  <form
-    onSubmit={[Function]}
+  <label
+    className="label-placement"
+    htmlFor="description"
   >
-    <label
-      htmlFor="description"
+    Description:
+    <input
+      autoFocus={true}
+      className="text-input"
+      id="description"
+      name="description"
+      onChange={[Function]}
+      placeholder="Required"
+      type="text"
+      value=""
+    />
+  </label>
+  <label
+    className="label-placement"
+    htmlFor="amount"
+  >
+    Amount:
+    <input
+      className="text-input"
+      id="amount"
+      name="amount"
+      onChange={[Function]}
+      placeholder="Required in numbers"
+      type="text"
+      value=""
+    />
+  </label>
+  <label
+    className="label-placement"
+    htmlFor="date"
+  >
+    Date:
+    <input
+      id="date"
+      name="date"
+      onChange={[Function]}
+      type="date"
+      value="1969-12-31"
+    />
+  </label>
+  <label
+    className="label-placement"
+    htmlFor="note"
+  >
+    Note (optional):
+    <textarea
+      id="note"
+      name="note"
+      onChange={[Function]}
+      placeholder="Add a note for your expense (optional)"
+      value=""
+    />
+  </label>
+  <div>
+    <button
+      className="button"
     >
-      Description
-      <input
-        autoFocus={true}
-        id="description"
-        name="description"
-        onChange={[Function]}
-        placeholder="Required"
-        type="text"
-        value=""
-      />
-    </label>
-    <label
-      htmlFor="amount"
-    >
-      Amount
-      <input
-        id="amount"
-        name="amount"
-        onChange={[Function]}
-        placeholder="Required in numbers"
-        type="text"
-        value=""
-      />
-    </label>
-    <label
-      htmlFor="date"
-    >
-      Date
-      <input
-        id="date"
-        name="date"
-        onChange={[Function]}
-        type="date"
-        value="1969-12-31"
-      />
-    </label>
-    <label
-      htmlFor="note"
-    >
-      Note (optional)
-      <textarea
-        id="note"
-        name="note"
-        onChange={[Function]}
-        placeholder="Add a note for your expense (optional)"
-        value=""
-      />
-    </label>
-    <button>
       Save Expense
     </button>
-  </form>
-</div>
+  </div>
+</form>
 `;

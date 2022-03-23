@@ -13,10 +13,7 @@ import './styles/styles.scss';
 import './firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase/firebase';
-
-
-
-// import './playground/promises';
+import LoadingPage from './components/LoadingPage';
 
 const store = configureStore();
 
@@ -25,7 +22,7 @@ const jsx = (
         <AppRouter />
     </Provider>
 );
-
+ 
 let hasRendered = false;
 const renderApp = () => {
     if (!hasRendered) {
@@ -34,7 +31,7 @@ const renderApp = () => {
     }
 }
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 onAuthStateChanged(auth, (user) => {
 

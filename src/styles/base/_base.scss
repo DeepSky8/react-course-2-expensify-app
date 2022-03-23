@@ -3,9 +3,10 @@ html {
 }
 
 body {
-    background: $parchment;
+    // background: $dark-grey;
     font-family: Helvetica, Arial, sans-serif;
     font-size: large;
+    line-height: 1.6;
 }
 
 button {
@@ -18,6 +19,10 @@ button:disabled {
 
 .is-active {
     font-weight: bold;
+}
+
+.is-active{
+    cursor: default;
 }
 
 *, *:before, *:after {

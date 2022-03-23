@@ -56,52 +56,69 @@ export default class ExpenseForm extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.onSubmit}>
-                    <label htmlFor='description'>Description
-                        <input
-                            id='description'
-                            name='description'
-                            type="text"
-                            placeholder="Required"
-                            autoFocus
-                            value={this.state.description}
-                            onChange={this.onDescriptionChange}
-                        />
-                    </label>
-                    <label htmlFor='amount'>Amount
-                        <input
-                            id='amount'
-                            name='amount'
-                            type="text"
-                            placeholder="Required in numbers"
-                            value={this.state.amount}
-                            onChange={this.onAmountChange}
-                        />
-                    </label>
-                    <label htmlFor='date'>Date
-                        <input
-                            id='date'
-                            name='date'
-                            type="date"
-                            value={this.state.createdAt}
-                            onChange={this.onDateChange}
-                        />
-                    </label>
-                    <label htmlFor='note'>Note (optional)
-                        <textarea
-                            id='note'
-                            name='note'
-                            placeholder="Add a note for your expense (optional)"
-                            value={this.state.note}
-                            onChange={this.onNoteChange}
-                        >
-                        </textarea>
-                    </label>
-                    <button>Save Expense</button>
-                </form>
-            </div>
+            <form
+                className='form'
+                onSubmit={this.onSubmit}>
+                {this.state.error && <p className='form__error'>{this.state.error}</p>}
+                <label
+                    className='label-placement'
+                    htmlFor='description'>
+                    Description:
+                    <input
+                        id='description'
+                        name='description'
+                        type="text"
+                        placeholder="Required"
+                        autoFocus
+                        className='text-input'
+                        value={this.state.description}
+                        onChange={this.onDescriptionChange}
+                    />
+                </label>
+                <label
+                    className='label-placement'
+                    htmlFor='amount'>
+                    Amount:
+                    <input
+                        id='amount'
+                        name='amount'
+                        type="text"
+                        className='text-input'
+                        placeholder="Required in numbers"
+                        value={this.state.amount}
+                        onChange={this.onAmountChange}
+                    />
+                </label>
+                <label
+                    className='label-placement'
+                    htmlFor='date'>
+                    Date:
+                    <input
+                        id='date'
+                        name='date'
+                        type="date"
+                        value={this.state.createdAt}
+                        onChange={this.onDateChange}
+                    />
+                </label>
+                <label
+                    className='label-placement'
+                    htmlFor='note'>
+                    Note (optional):
+                    <textarea
+                        id='note'
+                        name='note'
+                        placeholder="Add a note for your expense (optional)"
+                        value={this.state.note}
+                        onChange={this.onNoteChange}
+                    >
+                    </textarea>
+                </label>
+                <div>
+                    <button className='button'>Save Expense</button>
+                </div>
+            </form>
+
         )
     }
 }

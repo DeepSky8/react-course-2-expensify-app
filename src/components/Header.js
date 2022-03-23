@@ -1,26 +1,22 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { startLogout } from '../actions/auth';
 import { connect } from 'react-redux';
 
 
 
 export const Header = ({ startLogout }) => (
-    <header>
-        <h1>Expensify</h1>
-        <p>
-            <NavLink to="/dashboard" className={({ isActive }) =>
-                isActive ? 'is-active' : undefined
-            }>
-                Dashboard
-            </NavLink>
-            <NavLink to="/create" className={({ isActive }) =>
-                isActive ? 'is-active' : undefined
-            }>
-                Create Expense
-            </NavLink>
-            <button name='logout' onClick={startLogout}>Logout</button>
-        </p>
+    <header className='header'>
+        <div className='content-container'>
+            <div className='header__content'>
+                <Link
+                    to="/dashboard"
+                    className='header__title'>
+                    <h1>Expensify</h1>
+                </Link>
+                <button className='button button--link' name='logout' onClick={startLogout}>Logout</button>
+            </div>
+        </div>
     </header>
 )
 
@@ -39,4 +35,10 @@ export default connect(undefined, mapDispatchToProps)(Header);
 // <NavLink to="/" className={({ isActive }) =>
 // isActive ? 'is-active' : undefined
 // }>Login
+// </NavLink>
+
+// <NavLink to="/create" className={({ isActive }) =>
+// isActive ? 'is-active' : undefined
+// }>
+// Create Expense
 // </NavLink>
